@@ -1,11 +1,27 @@
 
+import { Routes,Route } from 'react-router-dom'
 import './App.css'
+import Home from './Pages/Home'
+import Cart from './Pages/Cart'
+import Wishlist from './Pages/Wishlist'
+import Pnf from './Pages/Pnf'
+import View from './Pages/View'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <>
-     <h1>E-cart</h1>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/wishlist' element={<Wishlist/>}/>
+      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/:id/view' element={<View/>}/>
+      <Route path='/*' element={<Pnf/>}/>
+
+
+    </Routes>
+    <Footer/>
     </>
   )
 }
